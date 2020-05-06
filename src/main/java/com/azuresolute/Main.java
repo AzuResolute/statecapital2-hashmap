@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         try {
-//            writeFile();
+            writeFile();
             readFile();
         } catch(IOException ex) {
             System.out.println("what went wrong?");
@@ -16,16 +16,23 @@ public class Main {
 
     public static void writeFile()  throws IOException {
         PrintWriter out = new PrintWriter(new FileWriter("OutFile.txt"));
-        out.println("this is a line in my file...");
-        out.println("a second line in my file...");
-        out.println("a third line in my file...");
+
+        out.println("Katrina");
+        out.println("Danielle");
+        out.println("Josel");
+
+        // these lines have not been entered into the file yet
+        // ^ flush forces everything that is still pending to be written
+
+        // all three files have been written into the file
         out.flush();
+
         out.close();
+
     }
 
     public static void readFile() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("outFile.txt"));
-        Scanner scanner = new Scanner(reader);
+        Scanner scanner = new Scanner(new BufferedReader(new FileReader("OutFile.txt")));
 
         while(scanner.hasNextLine()) {
             String currentLine = scanner.nextLine();

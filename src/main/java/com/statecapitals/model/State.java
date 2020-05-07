@@ -1,5 +1,7 @@
 package com.statecapitals.model;
 
+
+// Not used for StateCapital2
 public class State {
     private String name;
     private String capital;
@@ -23,5 +25,13 @@ public class State {
 
     public void setCapital(String capital) {
         this.capital = capital;
+    }
+
+    @Override
+    public String toString() {
+        return "State{" +
+                "name='" + name + '\'' +
+                ", capital='" + capital + '\'' +
+                '}';
     }
 }
